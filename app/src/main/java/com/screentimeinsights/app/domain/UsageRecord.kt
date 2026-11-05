@@ -9,5 +9,10 @@ data class UsageRecord(
     val startTime: Instant,
     val endTime: Instant,
     val durationMillis: Long,
+    val eventType: UsageEventType = UsageEventType.FOREGROUND_SESSION,
     val sessionId: String? = null,
 )
+
+enum class UsageEventType {
+    FOREGROUND_SESSION,
+}
